@@ -1,13 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 
 export default function ObrigadoPage() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("");
-  const searchParams = useSearchParams();
-  const paid = searchParams.get("paid") === "1";
+  const [paid, setPaid] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setPaid(params.get("paid") === "1");
+  }, []);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
