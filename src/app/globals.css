@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0b0b0d;
-  --fg: #ffffff;
-  --accent: #ff5a1f;
+  --bg: #0a0a0a;
+  --fg: #e8e8e8;
+  --muted: #888888;
+  --accent: #00ff88;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,25 +24,32 @@ body {
 }
 
 .card {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #222;
+  border-radius: 12px;
+  background: #111;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 0.75rem 1.1rem;
   font-weight: 600;
+  transition: 0.2s ease;
 }
 
 .btn-primary {
   background: var(--accent);
-  color: white;
+  color: #04140d;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.35);
 }
 
 .btn-muted {
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid #2a2a2a;
+  color: #d4d4d4;
 }

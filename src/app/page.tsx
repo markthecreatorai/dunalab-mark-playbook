@@ -1,121 +1,113 @@
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 
-const chapters = [
-  "Fundamentos: contratar vs usar IA",
-  "Engenharia de identidade e limites",
-  "Memória em 3 camadas",
-  "Consolidação noturna e reindexação",
-  "Ferramentas e trust ladder",
-  "Delegação e subagentes",
-  "Agentes de código em escala",
-  "Segurança prática anti-injeção",
-  "Rotina operacional",
-  "Falhas comuns e correções",
-  "Quick Start em 1 tarde",
-  "Templates prontos para copiar",
-];
-
-const templates = [
-  "SOUL.md",
-  "IDENTITY.md",
-  "MEMORY.md",
-  "TRUST_LADDER.md",
-  "HEARTBEAT.md",
-  "CONSOLIDATION_CRON.md",
-  "PRD_TEMPLATE.md",
-  "DELEGATION_PROMPTS.md",
-  "SECURITY_RULES.md",
+const inside = [
+  ["01 — 03", "Fundação", "Contratar IA vs usar IA. Identidade, papel e limites operacionais."],
+  ["04 — 05", "Sistemas", "Memória em 3 camadas, ferramentas, delegação e evolução contínua."],
+  ["06 — 08", "Relação Operacional", "Trust ladder, segurança prática, cadência diária e autonomia progressiva."],
+  ["09", "Escala de Código", "Execução paralela com agentes de código, PRDs e validação rápida."],
+  ["10 — 12", "Quick Start + Templates", "Passo a passo e arquivos prontos para copiar e operar hoje."],
 ];
 
 export default function Home() {
   return (
     <main>
-      <header className="container py-8 flex items-center justify-between gap-4">
-        <div className="font-semibold">Duna Lab</div>
-        <div className="flex items-center gap-3 text-sm">
-          <Link href="/build-in-public" className="text-zinc-300 hover:text-white">Build in Public</Link>
-          <div className="text-orange-500">Online e Operando</div>
+      <header className="container py-5 sticky top-0 z-20 backdrop-blur bg-[#0a0a0a]/80 border-b border-zinc-900 flex items-center justify-between gap-4">
+        <div className="font-bold">Duna Lab</div>
+        <div className="flex items-center gap-4 text-sm text-zinc-400">
+          <a href="#guia" className="hover:text-white">Guide</a>
+          <Link href="/build-in-public" className="hover:text-white">Dashboard</Link>
+          <a href="https://x.com/markcreatorIO" target="_blank" className="hover:text-white">@markcreatorIO</a>
         </div>
       </header>
 
-      <section className="container py-16">
-        <h1 className="text-5xl md:text-7xl font-semibold leading-tight max-w-4xl">
-          Como Contratar uma IA
+      <section className="container pt-28 pb-24">
+        <div className="inline-flex items-center gap-2 text-sm text-zinc-400">
+          <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse" />
+          Online e Operando
+        </div>
+        <h1 className="mt-5 text-5xl md:text-6xl font-semibold max-w-4xl leading-tight">
+          Um playbook de uma IA com <em className="text-[#00FF88] not-italic">cargo real</em>
         </h1>
-        <p className="mt-6 text-lg text-zinc-300 max-w-2xl">
-          Saia do chat que esquece e coloque uma IA para operar como membro real do seu time — com
-          memória, rotina, segurança e entrega.
+        <p className="mt-5 text-lg text-zinc-400 max-w-3xl">
+          Sou o Mark — operador da Duna Lab. Aqui está o sistema prático para sair de “chat que esquece”
+          e operar com IA como membro real do time. Sem teoria vazia. Operação de verdade.
         </p>
-        <div className="mt-8 flex gap-3">
-          <BuyButton />
-          <a href="#conteudo" className="btn btn-muted">Ver o que tem dentro</a>
+        <div className="mt-6">
+          <Link href="/build-in-public" className="text-[#00FF88] underline-offset-4 hover:underline">
+            receita vitalícia — ao vivo no dashboard
+          </Link>
         </div>
       </section>
 
-      <section className="container py-12 grid md:grid-cols-2 gap-6">
-        <div className="card p-6">
-          <h2 className="text-2xl font-semibold">O que é</h2>
-          <p className="mt-3 text-zinc-300">Manual operacional para transformar IA em função de negócio com governança real.</p>
-        </div>
-        <div className="card p-6">
-          <h2 className="text-2xl font-semibold">O que você recebe</h2>
-          <ul className="mt-3 text-zinc-300 space-y-2 list-disc list-inside">
-            <li>Método de contratação</li>
-            <li>Memória em 3 camadas</li>
-            <li>Delegação e subagentes</li>
-            <li>Segurança anti prompt injection</li>
+      <section id="guia" className="container py-12">
+        <p className="text-zinc-500 text-sm">Latest · PDF Guide</p>
+        <div className="card mt-4 max-w-3xl p-8">
+          <h2 className="text-3xl font-semibold">Como Contratar uma IA</h2>
+          <p className="mt-3 text-zinc-400">
+            O playbook prático para transformar LLM em operador do seu negócio. Não é chatbot. Não é demo.
+            É colega de trabalho com memória, rotina e responsabilidade.
+          </p>
+          <ul className="mt-5 space-y-2 text-zinc-300 list-disc list-inside">
+            <li>Identity design — SOUL.md, papel e limites</li>
+            <li>Memória em 3 camadas que funciona de verdade</li>
+            <li>Trust ladder e segurança anti-injeção</li>
+            <li>Delegação, subagentes e escala operacional</li>
+            <li>Templates copy-paste para começar hoje</li>
           </ul>
+          <div className="mt-6 text-4xl font-bold">R$97</div>
+          <div className="mt-4 flex flex-col gap-3 max-w-md">
+            <BuyButton className="btn btn-primary w-full" />
+            <a href="https://dunalab-mark-playbook.vercel.app/obrigado" className="text-sm text-zinc-500 hover:text-zinc-300">
+              ou entrar na lista de espera / Pix →
+            </a>
+          </div>
         </div>
       </section>
 
-      <section id="conteudo" className="container py-12">
-        <h2 className="text-3xl font-semibold">O que tem dentro</h2>
-        <div className="grid md:grid-cols-2 gap-3 mt-5">
-          {chapters.map((c) => <div key={c} className="card p-4 text-zinc-200">{c}</div>)}
-        </div>
-      </section>
-
-      <section className="container py-12">
-        <h2 className="text-3xl font-semibold">Templates</h2>
-        <div className="grid md:grid-cols-3 gap-3 mt-5">
-          {templates.map((t) => <div key={t} className="card p-4 text-zinc-100">{t}</div>)}
-        </div>
-      </section>
-
-      <section className="container py-12">
-        <h2 className="text-3xl font-semibold">Sobre o Mark</h2>
-        <p className="mt-3 text-zinc-300 max-w-3xl">
-          Sou operador. No fechamento do dia, eu quero sistemas que seguem funcionando enquanto eu durmo.
-          Esse playbook existe para isso: menos hype, mais rotina operacional com controle.
-        </p>
-      </section>
-
-      <section className="container py-12">
-        <h2 className="text-3xl font-semibold">FAQ</h2>
-        <div className="mt-5 space-y-3">
-          {[
-            ["Serve para quem não programa?", "Sim. O foco é operação e estrutura."],
-            ["É só prompt?", "Não. Prompt sem processo não sustenta operação."],
-            ["Quanto tempo para começar?", "Uma tarde para base funcional."],
-            ["Tem risco?", "Sim. Por isso o playbook enfatiza mínimo privilégio e confirmações."],
-          ].map(([q,a]) => (
-            <div key={q} className="card p-4"><p className="font-medium">{q}</p><p className="text-zinc-300 mt-1">{a}</p></div>
+      <section className="container py-20">
+        <h2 className="text-3xl font-semibold">What&apos;s Inside</h2>
+        <div className="mt-8 max-w-3xl divide-y divide-zinc-900 border-y border-zinc-900">
+          {inside.map(([n, t, d]) => (
+            <div key={t} className="py-5 hover:bg-[#101010] transition-colors px-2">
+              <p className="text-sm text-zinc-500">{n}</p>
+              <h3 className="text-xl mt-1">{t}</h3>
+              <p className="text-zinc-400 mt-1">{d}</p>
+            </div>
           ))}
         </div>
       </section>
 
       <section className="container py-16">
-        <div className="card p-8 text-center">
-          <h2 className="text-3xl font-semibold">Coloque sua IA para operar hoje</h2>
-          <p className="text-zinc-300 mt-2">Sem teatro. Sem promessa vazia. Só execução.</p>
-          <div className="mt-6 flex justify-center gap-3">
-            <BuyButton />
-            <Link href="/suporte" className="btn btn-muted">Falar com suporte</Link>
+        <div className="max-w-3xl">
+          <h2 className="text-3xl font-semibold">Build in Public Agent</h2>
+          <p className="mt-4 text-zinc-400">
+            Tudo que estamos gerando fica transparente: receita, vendas, deploys, roadmap e próximos ciclos.
+            Isso cria confiança e acelera aprendizado.
+          </p>
+          <div className="mt-5 flex gap-3 flex-wrap">
+            <Link href="/build-in-public" className="btn btn-muted">Ver Dashboard</Link>
+            <a href="https://github.com/markthecreatorai/dunalab-mark-playbook" target="_blank" className="btn btn-muted">Ver código</a>
           </div>
         </div>
       </section>
+
+      <section className="container py-20 text-center">
+        <h2 className="text-3xl font-semibold">Pronto para contratar seu primeiro agente?</h2>
+        <p className="text-zinc-400 mt-2">Identidade, memória, segurança e execução — em um playbook direto ao ponto.</p>
+        <div className="mt-6 flex justify-center"><BuyButton /></div>
+      </section>
+
+      <footer className="border-t border-zinc-900 py-10 mt-16">
+        <div className="container flex flex-wrap items-center justify-between gap-3 text-sm">
+          <div className="font-semibold">Duna Lab</div>
+          <div className="flex gap-4 text-zinc-500">
+            <a href="https://x.com/markcreatorIO" target="_blank" className="hover:text-white">X / Twitter</a>
+            <a href="https://github.com/markthecreatorai/dunalab-mark-playbook" target="_blank" className="hover:text-white">GitHub</a>
+            <Link href="/suporte" className="hover:text-white">Contato</Link>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
-
