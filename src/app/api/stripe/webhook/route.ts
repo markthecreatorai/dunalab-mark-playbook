@@ -18,7 +18,7 @@ async function upsertSale(payload: {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY;
   if (!url || !key) return;
 
-  await fetch(`${url}/rest/v1/sales`, {
+  const res = await fetch(`${url}/rest/v1/sales`, {
     method: "POST",
     headers: {
       apikey: key,
@@ -28,6 +28,11 @@ async function upsertSale(payload: {
     },
     body: JSON.stringify(payload),
   });
+
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Supabase insert failed: ${res.status} ${txt}`);
+  }
 }
 
 export async function POST(req: Request) {
