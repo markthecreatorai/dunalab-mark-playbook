@@ -9,7 +9,19 @@ export default function ObrigadoPage() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setPaid(params.get("paid") === "1");
+    const isPaid = params.get("paid") === "1";
+    setPaid(isPaid);
+
+    if (isPaid) {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({ event: "purchase", value: 97, currency: "BRL", item_name: "Como Contratar uma IA" });
+      if ((window as any).gtag) {
+        (window as any).gtag("event", "purchase", { value: 97, currency: "BRL", transaction_id: `plink-${Date.now()}` });
+      }
+      if ((window as any).fbq) {
+        (window as any).fbq("track", "Purchase", { value: 97, currency: "BRL" });
+      }
+    }
   }, []);
 
   const submit = async (e: React.FormEvent) => {

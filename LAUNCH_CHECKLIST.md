@@ -17,8 +17,9 @@
 - [x] Configurar checkout real (Stripe Payment Link live)
 
 ## Entrega
-- Landing: pendente deploy
-- Repo: pendente push
+- Landing: https://dunalab-mark-playbook.vercel.app
+- Repo: https://github.com/markthecreatorai/dunalab-mark-playbook
+- Checkout Stripe: https://buy.stripe.com/7sY7sMc5I7dDatbf1Ccs800
 - PDF: `public/Como-Contratar-uma-IA-Mark-Duna-Lab.pdf`
 
 ## SQL recomendado (Supabase)

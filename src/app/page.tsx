@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BuyButton from "@/components/BuyButton";
 
 const chapters = [
   "Fundamentos: contratar vs usar IA",
@@ -44,7 +45,7 @@ export default function Home() {
           memória, rotina, segurança e entrega.
         </p>
         <div className="mt-8 flex gap-3">
-          <Link href="https://buy.stripe.com/7sY7sMc5I7dDatbf1Ccs800" className="btn btn-primary" target="_blank" rel="noopener noreferrer">Comprar por R$97</Link>
+          <BuyButton />
           <a href="#conteudo" className="btn btn-muted">Ver o que tem dentro</a>
         </div>
       </section>
@@ -106,7 +107,7 @@ export default function Home() {
           <h2 className="text-3xl font-semibold">Coloque sua IA para operar hoje</h2>
           <p className="text-zinc-300 mt-2">Sem teatro. Sem promessa vazia. Só execução.</p>
           <div className="mt-6 flex justify-center gap-3">
-            <Link href="https://buy.stripe.com/7sY7sMc5I7dDatbf1Ccs800" className="btn btn-primary" target="_blank" rel="noopener noreferrer">Comprar por R$97</Link>
+            <BuyButton />
             <Link href="/suporte" className="btn btn-muted">Falar com suporte</Link>
           </div>
         </div>
