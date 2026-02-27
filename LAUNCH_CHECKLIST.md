@@ -15,6 +15,9 @@
 - [ ] Criar tabela `launch_leads` no Supabase (SQL precisa de execução final sem erro de editor)
 - [x] Testar submit do formulário na página `/obrigado`
 - [x] Configurar checkout real (Stripe Payment Link live)
+- [x] Criar endpoint webhook Stripe (`/api/stripe/webhook`)
+- [ ] Configurar `STRIPE_SECRET_KEY` e `STRIPE_WEBHOOK_SECRET` na Vercel
+- [ ] Executar `supabase-sales.sql` e validar registros de compra
 
 ## Entrega
 - Landing: https://dunalab-mark-playbook.vercel.app
