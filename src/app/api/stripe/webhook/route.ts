@@ -10,10 +10,7 @@ const stripe = process.env.STRIPE_SECRET_KEY
 async function upsertSale(payload: {
   email?: string | null;
   stripe_session_id: string;
-  stripe_payment_intent?: string | null;
   amount: number;
-  currency: string;
-  product: string;
   status: string;
 }) {
   const url = process.env.SUPABASE_URL;
@@ -52,10 +49,7 @@ export async function POST(req: Request) {
       await upsertSale({
         email: session.customer_details?.email,
         stripe_session_id: session.id,
-        stripe_payment_intent: typeof session.payment_intent === "string" ? session.payment_intent : null,
         amount: session.amount_total ?? 0,
-        currency: session.currency ?? "brl",
-        product: "Como Contratar uma IA",
         status: "completed",
       });
     }
