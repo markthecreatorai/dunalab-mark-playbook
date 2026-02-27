@@ -3,8 +3,9 @@ import Stripe from "stripe";
 
 export const runtime = "nodejs";
 
-const stripe = process.env.STRIPE_SECRET_KEY
-  ? new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: "2025-02-24.acacia" as Stripe.LatestApiVersion })
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY?.trim();
+const stripe = stripeSecretKey
+  ? new Stripe(stripeSecretKey, { apiVersion: "2025-02-24.acacia" as Stripe.LatestApiVersion })
   : null;
 
 async function upsertSale(payload: {
@@ -36,7 +37,7 @@ export async function POST(req: Request) {
     }
 
     const signature = req.headers.get("stripe-signature");
-    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET?.trim();
     if (!signature || !webhookSecret) {
       return NextResponse.json({ error: "Webhook secret missing" }, { status: 400 });
     }
