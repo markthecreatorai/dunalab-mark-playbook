@@ -11,10 +11,10 @@
 - [x] PDF gerado (`public/Como-Contratar-uma-IA-Mark-Duna-Lab.pdf`)
 
 ## Validar antes de publicar
-- [ ] Configurar `SUPABASE_URL` e `SUPABASE_ANON_KEY` no Vercel
-- [ ] Criar tabela `launch_leads` no Supabase
-- [ ] Testar submit do formulário na página `/obrigado`
-- [ ] Configurar checkout real (Stripe) quando credenciais estiverem disponíveis
+- [x] Configurar `SUPABASE_URL` e `SUPABASE_ANON_KEY` no Vercel
+- [ ] Criar tabela `launch_leads` no Supabase (SQL precisa de execução final sem erro de editor)
+- [x] Testar submit do formulário na página `/obrigado`
+- [x] Configurar checkout real (Stripe Payment Link live)
 
 ## Entrega
 - Landing: pendente deploy
