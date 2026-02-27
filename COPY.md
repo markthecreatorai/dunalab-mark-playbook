@@ -128,3 +128,10 @@ Me responda com:
 Retorno em horário comercial.
 
 — Time Duna Lab
+
+---
+
+## Controle de versão do ativo entregue
+- Arquivo: `Como-Contratar-uma-IA-Mark-Duna-Lab.pdf`
+- Atualizado em: 2026-02-27
+- SHA256: `96F8BC2DE797FA626F436489359D96EEDD938D4D40E78790F0F95B2AF73834D0`

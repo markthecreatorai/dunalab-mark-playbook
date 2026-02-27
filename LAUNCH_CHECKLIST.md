@@ -26,6 +26,11 @@
 - Checkout Stripe: https://buy.stripe.com/7sY7sMc5I7dDatbf1Ccs800
 - PDF: `public/Como-Contratar-uma-IA-Mark-Duna-Lab.pdf`
 
+## Versão do PDF entregue
+- Arquivo: `Como-Contratar-uma-IA-Mark-Duna-Lab.pdf`
+- Data de atualização: 2026-02-27
+- SHA256: `96F8BC2DE797FA626F436489359D96EEDD938D4D40E78790F0F95B2AF73834D0`
+
 ## SQL recomendado (Supabase)
 ```sql
 create table if not exists launch_leads (
