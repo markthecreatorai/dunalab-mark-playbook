@@ -31,9 +31,12 @@ const templates = [
 export default function Home() {
   return (
     <main>
-      <header className="container py-8 flex items-center justify-between">
+      <header className="container py-8 flex items-center justify-between gap-4">
         <div className="font-semibold">Duna Lab</div>
-        <div className="text-sm text-orange-500">Online e Operando</div>
+        <div className="flex items-center gap-3 text-sm">
+          <Link href="/build-in-public" className="text-zinc-300 hover:text-white">Build in Public</Link>
+          <div className="text-orange-500">Online e Operando</div>
+        </div>
       </header>
 
       <section className="container py-16">
